@@ -1,0 +1,23 @@
+{
+  "tablename": "cvi_caseload_archive",
+  "KeySchema": [
+    {
+      "AttributeName": "caseloadName",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "createdDT",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "caseloadName",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "createdDT",
+      "AttributeType": "S"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "tablename": "poct_covid_archive",
+  "KeySchema": [
+    {
+      "AttributeName": "NHSNumber",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "ReportDT",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "NHSNumber",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "ReportDT",
+      "AttributeType": "S"
+    }
+  ]
+}

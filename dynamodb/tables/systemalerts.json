@@ -1,0 +1,23 @@
+{
+  "tablename": "systemalerts",
+  "KeySchema": [
+    {
+      "AttributeName": "_id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "author",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "author",
+      "AttributeType": "S"
+    }
+  ]
+}

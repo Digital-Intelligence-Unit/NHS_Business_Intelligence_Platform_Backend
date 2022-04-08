@@ -1,0 +1,23 @@
+{
+  "tablename": "hipres_patientcodes",
+  "KeySchema": [
+    {
+      "AttributeName": "nhsnumber",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "code",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "nhsnumber",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "code",
+      "AttributeType": "S"
+    }
+  ]
+}

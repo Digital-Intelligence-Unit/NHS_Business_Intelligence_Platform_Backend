@@ -1,0 +1,23 @@
+{
+  "tablename": "reportpublisher",
+  "KeySchema": [
+    {
+      "AttributeName": "index",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "Publisher",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "index",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "Publisher",
+      "AttributeType": "S"
+    }
+  ]
+}

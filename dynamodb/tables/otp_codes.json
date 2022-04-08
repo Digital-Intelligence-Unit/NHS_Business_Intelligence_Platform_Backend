@@ -1,0 +1,23 @@
+{
+  "tablename": "otp_codes",
+  "KeySchema": [
+    {
+      "AttributeName": "email",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "code",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "email",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "code",
+      "AttributeType": "S"
+    }
+  ]
+}

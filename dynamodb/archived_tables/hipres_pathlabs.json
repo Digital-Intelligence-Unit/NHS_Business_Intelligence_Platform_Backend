@@ -1,0 +1,23 @@
+{
+  "tablename": "hipres_pathlabs",
+  "KeySchema": [
+    {
+      "AttributeName": "lab",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "createdDT",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "lab",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "createdDT",
+      "AttributeType": "S"
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "tablename": "filestorage",
+  "KeySchema": [
+    {
+      "AttributeName": "name",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "dateuploaded",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "name",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "dateuploaded",
+      "AttributeType": "S"
+    }
+  ]
+}

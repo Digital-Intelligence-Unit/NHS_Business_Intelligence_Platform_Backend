@@ -1,0 +1,23 @@
+{
+  "tablename": "opensourceviews",
+  "KeySchema": [
+    {
+      "AttributeName": "page",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "datetime",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "page",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "datetime",
+      "AttributeType": "S"
+    }
+  ]
+}

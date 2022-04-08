@@ -1,0 +1,23 @@
+{
+  "tablename": "acks_Lists",
+  "KeySchema": [
+    {
+      "AttributeName": "uid",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "listname",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "uid",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "listname",
+      "AttributeType": "S"
+    }
+  ]
+}

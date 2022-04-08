@@ -1,0 +1,23 @@
+{
+  "tablename": "hipres_occupation",
+  "KeySchema": [
+    {
+      "AttributeName": "occupation",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "createdDT",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "occupation",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "createdDT",
+      "AttributeType": "S"
+    }
+  ]
+}

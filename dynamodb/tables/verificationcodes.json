@@ -1,0 +1,23 @@
+{
+  "tablename": "verificationcodes",
+  "KeySchema": [
+    {
+      "AttributeName": "code",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "username",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "code",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "username",
+      "AttributeType": "S"
+    }
+  ]
+}

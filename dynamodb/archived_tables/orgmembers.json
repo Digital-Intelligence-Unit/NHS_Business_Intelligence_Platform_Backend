@@ -1,0 +1,23 @@
+{
+  "tablename": "orgmembers",
+  "KeySchema": [
+    {
+      "AttributeName": "_id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "organisationcode",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "organisationcode",
+      "AttributeType": "S"
+    }
+  ]
+}

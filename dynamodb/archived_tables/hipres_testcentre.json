@@ -1,0 +1,23 @@
+{
+  "tablename": "hipres_testcentre",
+  "KeySchema": [
+    {
+      "AttributeName": "testcentre",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "createdDT",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "testcentre",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "createdDT",
+      "AttributeType": "S"
+    }
+  ]
+}

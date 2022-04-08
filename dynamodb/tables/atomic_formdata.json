@@ -1,0 +1,23 @@
+{
+  "tablename": "atomic_formdata",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "formid",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "formid",
+      "AttributeType": "S"
+    }
+  ]
+}

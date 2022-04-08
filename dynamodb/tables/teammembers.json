@@ -1,0 +1,23 @@
+{
+  "tablename": "teammembers",
+  "KeySchema": [
+    {
+      "AttributeName": "_id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "teamcode",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "_id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "teamcode",
+      "AttributeType": "S"
+    }
+  ]
+}

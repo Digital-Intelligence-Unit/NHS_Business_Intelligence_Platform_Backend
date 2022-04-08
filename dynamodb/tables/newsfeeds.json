@@ -1,0 +1,23 @@
+{
+  "tablename": "newsfeeds",
+  "KeySchema": [
+    {
+      "AttributeName": "destination",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "type",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "destination",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "type",
+      "AttributeType": "S"
+    }
+  ]
+}
