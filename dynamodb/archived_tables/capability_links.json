@@ -1,0 +1,23 @@
+{
+  "tablename": "capability_links",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "approvedby",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "approvedby",
+      "AttributeType": "S"
+    }
+  ]
+}

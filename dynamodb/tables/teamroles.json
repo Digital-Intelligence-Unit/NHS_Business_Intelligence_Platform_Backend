@@ -1,0 +1,23 @@
+{
+  "tablename": "teamroles",
+  "KeySchema": [
+    {
+      "AttributeName": "teamcode",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "roleassignedDT",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "teamcode",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "roleassignedDT",
+      "AttributeType": "S"
+    }
+  ]
+}

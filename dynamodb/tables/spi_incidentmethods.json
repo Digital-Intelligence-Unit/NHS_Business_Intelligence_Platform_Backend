@@ -1,0 +1,23 @@
+{
+  "tablename": "spi_incidentmethods",
+  "KeySchema": [
+    {
+      "AttributeName": "method",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "dateCreated",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "method",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "dateCreated",
+      "AttributeType": "S"
+    }
+  ]
+}

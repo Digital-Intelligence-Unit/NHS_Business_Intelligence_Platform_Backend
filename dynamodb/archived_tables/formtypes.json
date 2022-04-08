@@ -1,0 +1,23 @@
+{
+  "tablename": "formtypes",
+  "KeySchema": [
+    {
+      "AttributeName": "index",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "Type",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "index",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "Type",
+      "AttributeType": "S"
+    }
+  ]
+}

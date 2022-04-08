@@ -1,0 +1,23 @@
+{
+  "tablename": "hipres_componenttypes",
+  "KeySchema": [
+    {
+      "AttributeName": "type",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "createdDT",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "type",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "createdDT",
+      "AttributeType": "S"
+    }
+  ]
+}

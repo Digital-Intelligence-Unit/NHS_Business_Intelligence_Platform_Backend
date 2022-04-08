@@ -1,0 +1,23 @@
+{
+  "tablename": "inpatients",
+  "KeySchema": [
+    {
+      "AttributeName": "index",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "nhsNumber",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "index",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "nhsNumber",
+      "AttributeType": "S"
+    }
+  ]
+}

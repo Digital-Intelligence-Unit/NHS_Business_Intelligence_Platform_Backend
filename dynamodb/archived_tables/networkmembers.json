@@ -1,0 +1,23 @@
+{
+  "tablename": "networkmembers",
+  "KeySchema": [
+    {
+      "AttributeName": "networkcode",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "teamcode",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "networkcode",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "teamcode",
+      "AttributeType": "S"
+    }
+  ]
+}

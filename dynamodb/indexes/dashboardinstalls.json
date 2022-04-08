@@ -1,0 +1,21 @@
+{
+    "TableName": "dashboardinstalls",
+    "AttributeDefinitions": [
+      { "AttributeName": "app_name", "AttributeType": "S" },
+      { "AttributeName": "teamcode", "AttributeType": "S" }
+    ],
+    "GlobalSecondaryIndexUpdates": [
+      {
+        "Create": {
+          "IndexName": "app_name-teamcode-index",
+          "KeySchema": [
+            { "AttributeName": "app_name", "KeyType": "HASH" },
+            { "AttributeName": "teamcode", "KeyType": "RANGE" }
+          ],
+          "Projection": {
+            "ProjectionType": "ALL"
+          }
+        }
+      }
+    ]
+  }

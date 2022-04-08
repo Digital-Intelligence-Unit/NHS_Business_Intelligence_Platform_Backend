@@ -1,0 +1,23 @@
+{
+  "tablename": "labtests", 
+  "KeySchema": [
+    {
+      "AttributeName": "index",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "FillerOrderNumber",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "index",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "FillerOrderNumber",
+      "AttributeType": "S"
+    }
+  ]
+}

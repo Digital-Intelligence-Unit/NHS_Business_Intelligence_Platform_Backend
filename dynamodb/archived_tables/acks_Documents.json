@@ -1,0 +1,23 @@
+{
+  "tablename": "acks_Documents",
+  "KeySchema": [
+    {
+      "AttributeName": "uid",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "s3filename",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "uid",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "s3filename",
+      "AttributeType": "S"
+    }
+  ]
+}

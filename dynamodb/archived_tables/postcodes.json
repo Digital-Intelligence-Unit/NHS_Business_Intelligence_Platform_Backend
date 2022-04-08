@@ -1,0 +1,23 @@
+{
+  "tablename": "postcodes",
+  "KeySchema": [
+    {
+      "AttributeName": "_id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "type",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "_id",
+      "AttributeType": "N"
+    },
+    {
+      "AttributeName": "type",
+      "AttributeType": "S"
+    }
+  ]
+}

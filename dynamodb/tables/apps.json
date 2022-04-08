@@ -1,0 +1,23 @@
+{
+  "tablename": "apps",
+  "KeySchema": [
+    {
+      "AttributeName": "name",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "environment",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "name",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "environment",
+      "AttributeType": "S"
+    }
+  ]
+}

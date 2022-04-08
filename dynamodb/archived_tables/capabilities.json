@@ -1,0 +1,23 @@
+{
+  "tablename": "capabilities",
+  "KeySchema": [
+    {
+      "AttributeName": "id",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "authoriser",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "id",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "authoriser",
+      "AttributeType": "S"
+    }
+  ]
+}

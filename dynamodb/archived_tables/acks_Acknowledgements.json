@@ -1,0 +1,23 @@
+{
+  "tablename": "acks_Acknowledgements",
+  "KeySchema": [
+    {
+      "AttributeName": "uid",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "documentuid",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "uid",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "documentuid",
+      "AttributeType": "S"
+    }
+  ]
+}

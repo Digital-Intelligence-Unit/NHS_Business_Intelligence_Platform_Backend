@@ -1,0 +1,23 @@
+{
+  "tablename": "access_logs",
+  "KeySchema": [
+    {
+      "AttributeName": "date",
+      "KeyType": "HASH"
+    },
+    {
+      "AttributeName": "uuid",
+      "KeyType": "RANGE"
+    }
+  ],
+  "AttributeDefinitions": [
+    {
+      "AttributeName": "date",
+      "AttributeType": "S"
+    },
+    {
+      "AttributeName": "uuid",
+      "AttributeType": "S"
+    }
+  ]
+}
