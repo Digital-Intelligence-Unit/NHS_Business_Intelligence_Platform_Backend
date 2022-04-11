@@ -24,7 +24,6 @@ module.exports.settings = {
   pgport: pgport,
   postgres_un: process.env.POSTGRES_UN,
   postgres_pw: process.env.POSTGRES_PW,
-  AWS_BUCKET_NAME: "diu-nexus-poct-covid-" + access.toLowerCase(),
 };
 
 const config = this.settings;
