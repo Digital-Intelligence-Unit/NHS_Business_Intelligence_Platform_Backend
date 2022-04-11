@@ -16,13 +16,16 @@
     "pull-labs": "cd datageneration && node pulllabtests.ts && cd ..",
     "get-buckets": "cd s3 && node getbuckets.js && cd ..",
     "faketest": "node fakerTestData.js",
-    "switchondev": "node switchondev.ts"
+    "switchondev": "node switchondev.ts",
+    "create-table-postgres": "node ./postgres/createTable.js",
+    "delete-table-postgres": "node ./postgres/deleteTable.js"
   },
   "dependencies": {
     "aws-sdk": "^2.840.0",
     "express": "~4.16.1",
     "faker": "^4.1.0",
-    "json2csv": "^5.0.0"
+    "json2csv": "^5.0.0",
+    "pg": "^8.7.1"
   },
   "devDependencies": {
     "@types/node": "^17.0.18"
