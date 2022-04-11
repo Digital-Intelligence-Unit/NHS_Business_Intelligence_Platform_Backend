@@ -1,5 +1,4 @@
 // @ts-check
-
 const AWS = require("../config/dynamodb").AWS;
 var dynamodb = new AWS.DynamoDB();
 
