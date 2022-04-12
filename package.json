@@ -13,12 +13,14 @@
   },
   "dependencies": {
     "aws-sdk": "^2.840.0",
+    "diu-data-functions": "^1.1.1",
     "express": "~4.16.1",
     "faker": "^4.1.0",
     "json2csv": "^5.0.7",
     "pg": "^8.7.1"
   },
   "devDependencies": {
-    "@types/node": "^17.0.18"
+    "@types/node": "^17.0.18",
+    "dotenv": "^8.2.0"
   }
 }
