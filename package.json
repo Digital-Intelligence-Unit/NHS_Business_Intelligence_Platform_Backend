@@ -8,7 +8,8 @@
     "create-index": "node ./dynamodb/createIndex.js",
     "delete-table": "node ./dynamodb/deleteTable.js",
     "create-table-postgres": "node ./postgres/createTable.js",
-    "delete-table-postgres": "node ./postgres/deleteTable.js"
+    "delete-table-postgres": "node ./postgres/deleteTable.js",
+    "backup-table-postgres": "node ./postgres/backupTableData.js"
   },
   "dependencies": {
     "aws-sdk": "^2.840.0",
