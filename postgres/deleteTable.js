@@ -20,8 +20,6 @@ DeleteTableQuery(function(err,data){
 });
 
 function DeleteTableQuery(callback){
-  console.log('testing');
-  console.log(pool);
   const query = `DROP TABLE IF EXISTS ${tableName};`;
   pool.query(query, (error, results) => {
     if (error) {

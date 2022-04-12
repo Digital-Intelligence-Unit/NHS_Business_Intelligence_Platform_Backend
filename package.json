@@ -1,22 +1,12 @@
 {
-  "name": "express-api-template",
+  "name": "nhs-business-intelligence-platform-backend",
   "main": "server.js",
   "version": "1.0.0",
   "scripts": {
     "start": "node server",
-    "create-table": "cd dynamodb && node createTable.js && cd ..",
-    "create-index": "cd dynamodb && node createIndex.js && cd ..",
-    "delete-table": "cd dynamodb && node deleteTable.js && cd ..",
-    "load-data": "cd dynamodb && node loadData.js && cd ..",
-    "read-data": "cd dynamodb && node readData.js && cd ..",
-    "update-index": "cd dynamodb && node secindex.js && cd ..",
-    "generatedata": "cd datageneration && node generator.js && cd ..",
-    "tester": "node tester.js",
-    "datefix": "node labtestdatefix.ts",
-    "pull-labs": "cd datageneration && node pulllabtests.ts && cd ..",
-    "get-buckets": "cd s3 && node getbuckets.js && cd ..",
-    "faketest": "node fakerTestData.js",
-    "switchondev": "node switchondev.ts",
+    "create-table": "node ./dynamodb/createTable.js",
+    "create-index": "node ./dynamodb/createIndex.js",
+    "delete-table": "node ./dynamodb/deleteTable.js",
     "create-table-postgres": "node ./postgres/createTable.js",
     "delete-table-postgres": "node ./postgres/deleteTable.js"
   },
@@ -24,7 +14,7 @@
     "aws-sdk": "^2.840.0",
     "express": "~4.16.1",
     "faker": "^4.1.0",
-    "json2csv": "^5.0.0",
+    "json2csv": "^5.0.7",
     "pg": "^8.7.1"
   },
   "devDependencies": {
