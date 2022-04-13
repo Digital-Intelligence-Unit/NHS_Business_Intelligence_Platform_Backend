@@ -11,7 +11,28 @@ For recommended database deployments please review the code in: <https://github.
 - AWS Secrets Manager to include the following secrets: postgres
 - Node.js v10.13.0 or later installed
 
-## Usage and Testing
+## Usage 
+
+This package has multiple scripts that can be run using the commands listed below.
+
+Baring in mind that we have to run a different terminal window to connect to our basiton server and also update environment variables in AWS secrets manager before these scripts will work correctly, there is extra work to do in the background before you can just pick up this script and run with it. You can find all of the documentation for how to set up AWS [here](https://docs.aws.amazon.com/secretsmanager/index.html). If you also require a bastion server you can find information about this [here](https://aws.amazon.com/quickstart/architecture/linux-bastion/).
+
+`create-table` - This will create a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/createTable.js`. If you are creating a new table you can follow the example JSON files available in `/dynamodb/tables`, edit them accordingly and save under a new name. You will need to change the file path provided on line 11 of the file `let tableData = require("{path-to-file}");`. Once you have done this, you can run the command `npm run create-table` in the root of the folder in your terminal/ command line.
+
+`create-index` - This will create an index for a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/createIndex.js`. If you are creating a new index you can follow the example JSON files available in `/dynamodb/indexes`, edit them accordingly and save under a new name. You will need to change the file path provided on line 11 of the file `let indexData = require("{path-to-file}");`. Once you have done this, you can run the command `npm run create-index` in the root of the folder in your terminal/ command line.
+
+`delete-table` - This will delete a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/deleteTable.js`. You will need to change the file path provided on line 3 of the file `const tablename = "{table-name}";`. Once you have done this, you can run the command `npm run create-index` in the root of the folder in your terminal/ command line.
+
+`create-table-postgres` - This will create a postgres table reading from a create script located in `/postgres/tables/`. If you are creating a new table then you can edit one of the files and resave. I would recommend using a GUI to create the table locally and then exporting the create script via the GUI. If you have multiple tables set them up with foreign keys before exporting the data to this file. You will then copy and paste the entire SQL script onto line 1 after `let createQuery = `. You will then update line 3 of the file `/postgres/createTable.js` to contain the path to your new file. `const { createQuery } = require("{path-to-file}");`. Once you have done this, you can run the command `npm run create-table-postgres` in the root of the folder in your terminal/ command line.
+
+`delete-table-postgres` - This will delete a postgres table. You will then edit the code on line 3 of the file `/postgres/deleteTable.js` to contain the name of the table you wish to delete `const tableName = "{table-name}";`. Once you have done this, you can run the command `npm run create-table-postgres` in the root of the folder in your terminal/ command line. Once you have done this, you can run the command `npm run delete-table-postgres` in the root of the folder in your terminal/ command line.
+
+`backup-table-postgres` - This can be set up to backup multiple tables at once. You will need to edit the array found on line 8 of the file `postgres/backupTableData.js` to contain as many names of tables as you'd like to back up. This will create a CSV of all of the table rows into a folder that's hidden from the repo using .gitignore located at `/postgres/backup_data/`. Once you have done this, you can run the command `npm run backup-table-postgres` in the root of the folder in your terminal/ command line.
+
+`update-table-postgres` - This can be set up to update multiple tables at once. You will need to edit the array found on line 8 of the file `postgres/backupTableData.js` to contain as many names of tables as you'd like to restore. This script will ifnd the files located in the .gitignore folder `/postgres/backup_data/`. If the file exists then the data will be added to the database. You can edit how many rows are updated at once if you change the number stored in line 76 `if(counter && (counter % 500 == 0)){` to reflect how many statements should be grouped together. Once you have done this, you can run the command `npm run update-table-postgres` in the root of the folder in your terminal/ command line.
+
+
+## Testing
 
 TBC
 
