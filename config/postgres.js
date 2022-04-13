@@ -5,7 +5,6 @@ const types = pg.types;
 const Pool = pg.Pool;
 
 async function getEnvVariables(){
-  console.log('getting settings');
   try {
     const postgresCredentials = JSON.parse(await AWSHelper.getSecrets("postgres"));
     const awsCredentials = JSON.parse(await AWSHelper.getSecrets("awsdev"));
