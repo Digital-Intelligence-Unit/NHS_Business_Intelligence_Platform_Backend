@@ -39,7 +39,6 @@ pool.then(pool => {
                 let blnFirstRemainder = false;
                 let csvCurrentRowCounter = 0;
                 let csvReplaceItemCounter = 1;
-                // let csvReplaceValues = {};
                 let csvReplaceValues = [];
                 csvData.forEach(row => {                   
                     // If the counter has no value then this is the first row of the csv file, so we create the start of the insert query
@@ -88,7 +87,6 @@ pool.then(pool => {
                             queryValues = ``;
                             csvReplaceItemCounter = 1;
                             counter = 0;
-                            return;
                         }
                         blnFirstRemainder = true;
                     }
@@ -110,7 +108,6 @@ pool.then(pool => {
                 pool.query(query, (error, results) => {
                     if (error) {
                         console.log(error + ' - query number ' + counter);
-                        console.log(query);
                     } else if (results && results.rows && results.rows.length) {
                         console.log(results.rows);
                     } else {
