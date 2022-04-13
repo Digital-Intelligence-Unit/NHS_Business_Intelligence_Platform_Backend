@@ -2,3 +2,5 @@
 node_modules
 
 postgres/backup_data/
+
+*.DS_Store
