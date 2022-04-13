@@ -2,7 +2,7 @@ const pool = require("../config/postgres").pool;
 
 pool.then(pool => {
   //Set the table to be removed here
-  const tableName = "virtual_ward_decision_20201129";
+  const tableName = "virtual_ward_decision_20211129_new";
 
   DeleteTableQuery(function(err,data){
       if(data && data.length == 0){
