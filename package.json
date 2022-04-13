@@ -3,7 +3,6 @@
   "main": "server.js",
   "version": "1.0.0",
   "scripts": {
-    "start": "node server",
     "create-table": "node ./dynamodb/createTable.js",
     "create-index": "node ./dynamodb/createIndex.js",
     "delete-table": "node ./dynamodb/deleteTable.js",
