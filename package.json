@@ -9,10 +9,12 @@
     "delete-table": "node ./dynamodb/deleteTable.js",
     "create-table-postgres": "node ./postgres/createTable.js",
     "delete-table-postgres": "node ./postgres/deleteTable.js",
-    "backup-table-postgres": "node ./postgres/backupTableData.js"
+    "backup-table-postgres": "node ./postgres/backupTableData.js",
+    "update-table-postgres": "node ./postgres/updateTableData.js"
   },
   "dependencies": {
     "aws-sdk": "^2.840.0",
+    "csv-parser": "^3.0.0",
     "diu-data-functions": "^1.1.1",
     "express": "~4.16.1",
     "faker": "^4.1.0",
