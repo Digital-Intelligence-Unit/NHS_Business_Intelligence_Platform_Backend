@@ -1,4 +1,3 @@
-// @ts-check
 const AWS = require("aws-sdk");
 const { Parser } = require('json2csv');
 const fs = require('fs')
@@ -7,16 +6,7 @@ const pool = require("../config/postgres").pool;
 pool.then(pool => {
     //Set the tables to be backed up here
     const tableNames = [
-        "lancs_schools",
-        "lookup_oa_lsoa_msoa_la",
-        "lsoa_shapes",
-        "pbi_geographies",
-        "pcn_hex_geo",
-        "pcn_shapes",
-        "pharmacy",
-        "places",
-        "trusts",
-        "wards",
+        "virtual_ward_decision_20211129_new",
     ];
 
     tableNames.forEach(tableName => {
