@@ -3,4 +3,6 @@ node_modules
 
 postgres/backup_data/
 
+postgres/generated_schema/
+
 *.DS_Store

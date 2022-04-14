@@ -9,7 +9,8 @@
     "create-table-postgres": "node ./postgres/createTable.js",
     "delete-table-postgres": "node ./postgres/deleteTable.js",
     "backup-table-postgres": "node ./postgres/backupTableData.js",
-    "update-table-postgres": "node ./postgres/updateTableData.js"
+    "update-table-postgres": "node ./postgres/updateTableData.js",
+    "backup-all-tables-postgres": "node ./postgres/backupAllTables.js"
   },
   "dependencies": {
     "aws-sdk": "^2.840.0",
