@@ -6,7 +6,7 @@ pool.then(pool => {
   runQuery();
   
   function runQuery(){
-    const query = createQuery;
+const query = createQuery;
     pool.query(query, (error, results) => {
       if (error) {
         console.log("Error: " + error);

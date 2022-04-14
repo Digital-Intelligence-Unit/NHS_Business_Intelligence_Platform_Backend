@@ -97,13 +97,13 @@ pool.then(pool => {
                 query = queryStart + queryValues;
                 arrQuery.push({text: query, values:csvReplaceValues});
                 updateTable(arrQuery);
+                delete arrQuery;
             }               
         }); 
     });
 
     function updateTable(arrQuery){
         if(arrQuery.length){
-            let counter = 0;
             arrQuery.forEach(query => {
                 pool.query(query, (error, results) => {
                     if (error) {
@@ -113,7 +113,6 @@ pool.then(pool => {
                     } else {
                         console.log("Table Updated, query number " + counter);
                     }
-                    counter++;
                 });
             });
         }
