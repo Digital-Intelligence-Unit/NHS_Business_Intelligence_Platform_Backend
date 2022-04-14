@@ -1,4 +1,4 @@
-const AWS = require("../config/database").AWS;
+const AWS = require("../config/dynamodb").AWS;
 var dynamodb = new AWS.DynamoDB();
 const tablename = "gppractices"; // CHANGE ME
 

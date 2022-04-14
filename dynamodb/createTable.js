@@ -1,4 +1,4 @@
-const AWS = require("../config/database").AWS;
+const AWS = require("../config/dynamodb").AWS;
 var dynamodb = new AWS.DynamoDB();
 
 const vpc = "dev"; // "prod";
@@ -30,9 +30,11 @@ if (vpc === "prod") {
 
 dynamodb.createTable(params, function (err, data) {
   if (err) {
-    console.error("Unable to create table. Error JSON:", JSON.stringify(err, null, 2));
+    console.error(
+      "Unable to create table. Error JSON:",
+      JSON.stringify(err, null, 2)
+    );
   } else {
     console.log("Created table: " + tableData.tablename);
   }
 });
-

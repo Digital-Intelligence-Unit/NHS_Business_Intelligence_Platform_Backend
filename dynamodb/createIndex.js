@@ -1,5 +1,4 @@
-// @ts-check
-const AWS = require("../config/dynamodb").AWS;
+const AWS = require("./config/dynamodb").AWS;
 var dynamodb = new AWS.DynamoDB();
 
 const vpc = "dev"; // "prod";
@@ -27,8 +26,14 @@ if (vpc === "prod") {
 
 dynamodb.updateTable(params, function (err, data) {
   if (err) {
-    console.error("Unable to add index. Error JSON:", JSON.stringify(err, null, 2));
+    console.error(
+      "Unable to add index. Error JSON:",
+      JSON.stringify(err, null, 2)
+    );
   } else {
-    console.log("Added index: " + indexData.GlobalSecondaryIndexUpdates[0].Create.IndexName);
+    console.log(
+      "Added index: " +
+        indexData.GlobalSecondaryIndexUpdates[0].Create.IndexName
+    );
   }
 });
