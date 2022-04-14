@@ -6,6 +6,7 @@
     "create-table": "node ./dynamodb/createTable.js",
     "create-index": "node ./dynamodb/createIndex.js",
     "delete-table": "node ./dynamodb/deleteTable.js",
+    "update-table": "node ./dynamodb/updateTable.js",
     "backup-all-tables": "node ./dynamodb/backupAllTables.js",
     "create-table-postgres": "node ./postgres/createTable.js",
     "delete-table-postgres": "node ./postgres/deleteTable.js",
