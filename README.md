@@ -11,7 +11,7 @@ For recommended database deployments please review the code in: <https://github.
 - AWS Secrets Manager to include the following secrets: postgres
 - Node.js v10.13.0 or later installed
 
-## Usage 
+## Usage
 
 This package has multiple scripts that can be run using the commands listed below.
 
@@ -30,7 +30,6 @@ Baring in mind that we have to run a different terminal window to connect to our
 `backup-table-postgres` - This can be set up to backup multiple tables at once. You will need to edit the array found on line 8 of the file `postgres/backupTableData.js` to contain as many names of tables as you'd like to back up. This will create a CSV of all of the table rows into a folder that's hidden from the repo using .gitignore located at `/postgres/backup_data/`. Once you have done this, you can run the command `npm run backup-table-postgres` in the root of the folder in your terminal/ command line.
 
 `update-table-postgres` - This can be set up to update multiple tables at once. You will need to edit the array found on line 8 of the file `postgres/backupTableData.js` to contain as many names of tables as you'd like to restore. This script will ifnd the files located in the .gitignore folder `/postgres/backup_data/`. If the file exists then the data will be added to the database. You can edit how many rows are updated at once if you change the number stored in line 76 `if(counter && (counter % 500 == 0)){` to reflect how many statements should be grouped together. Once you have done this, you can run the command `npm run update-table-postgres` in the root of the folder in your terminal/ command line.
-
 
 ## Testing
 
