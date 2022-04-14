@@ -4,9 +4,11 @@ const pg = require("pg");
 const types = pg.types;
 const Pool = pg.Pool;
 
-async function getEnvVariables(){
+async function getEnvVariables() {
   try {
-    const postgresCredentials = JSON.parse(await AWSHelper.getSecrets("postgres"));
+    const postgresCredentials = JSON.parse(
+      await AWSHelper.getSecrets("postgres")
+    );
     const awsCredentials = JSON.parse(await AWSHelper.getSecrets("awsdev"));
     process.env.POSTGRES_UN = postgresCredentials.username;
     process.env.POSTGRES_PW = postgresCredentials.password;
@@ -18,7 +20,7 @@ async function getEnvVariables(){
       host: process.env.PGDATABASE || "localhost",
       database: "postgres",
       password: process.env.POSTGRES_PW,
-      port: process.env.PGPORT || "5433"
+      port: process.env.PGPORT || "5433",
     });
     return pool;
   } catch (error) {
