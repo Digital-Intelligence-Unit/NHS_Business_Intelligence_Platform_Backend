@@ -10,7 +10,8 @@
     "delete-table-postgres": "node ./postgres/deleteTable.js",
     "backup-table-postgres": "node ./postgres/backupTableData.js",
     "update-table-postgres": "node ./postgres/updateTableData.js",
-    "backup-all-tables-postgres": "node ./postgres/backupAllTables.js"
+    "backup-all-tables-postgres": "node ./postgres/backupAllTables.js",
+    "update-all-tables-postgres": "node ./postgres/updateAllTablesData.js"
   },
   "dependencies": {
     "aws-sdk": "^2.840.0",
