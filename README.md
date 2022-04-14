@@ -10,8 +10,29 @@ For recommended database deployments please review the code in: <https://github.
 - Locally stored AWS Credentials which grant programmatic access, created in AWS IAM
 - AWS Secrets Manager to include the following secrets: postgres
 - Node.js v10.13.0 or later installed
+- Connection to RDS Postgres database
 
-## Usage and Testing
+## Usage
+
+This package has multiple scripts that can be run using the commands listed below.
+
+`npm run create-table` - This will create a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/createTable.js`.
+
+`npm run create-index` - This will create an index for a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/createIndex.js`.
+
+`npm run delete-table` - This will delete a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/deleteTable.js`.
+
+`npm run create-table-postgres` - This will create a postgres table reading from a create script located in `/postgres/tables/`.
+
+`npm run delete-table-postgres` - This will delete a postgres table based on the settings in `/postgres/deleteTable.js`.
+
+`npm run backup-table-postgres` - This can be set up to backup multiple tables at once, configuration can be found in the file `postgres/backupTableData.js`.
+
+`npm run update-table-postgres` - This can be set up to update multiple tables at once, configuration can be found in the file `postgres/backupTableData.js`.
+
+TBC
+
+## Testing
 
 TBC
 

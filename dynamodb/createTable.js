@@ -1,12 +1,5 @@
-const AWS = require("../config/database").AWS;
+const AWS = require("../config/dynamodb").AWS;
 var dynamodb = new AWS.DynamoDB();
-
-const vpc = "dev"; // "prod";
-const billing = "PAY_PER_REQUEST";
-const throughput = {
-  ReadCapacityUnits: 5,
-  WriteCapacityUnits: 5,
-};
 
 let tableData = require("./archived_tables/gppractices.json");
 
@@ -20,13 +13,8 @@ let params = {
       Value: "diu",
     },
   ],
+  BillingMode: "PAY_PER_REQUEST",
 };
-
-if (vpc === "prod") {
-  params["ProvisionedThroughput"] = throughput;
-} else {
-  params["BillingMode"] = billing;
-}
 
 dynamodb.createTable(params, function (err, data) {
   if (err) {
@@ -35,4 +23,3 @@ dynamodb.createTable(params, function (err, data) {
     console.log("Created table: " + tableData.tablename);
   }
 });
-
