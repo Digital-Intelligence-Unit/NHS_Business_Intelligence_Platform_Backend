@@ -1,4 +1,3 @@
-const AWS = require("aws-sdk");
 const { Parser } = require("json2csv");
 const fs = require("fs");
 
