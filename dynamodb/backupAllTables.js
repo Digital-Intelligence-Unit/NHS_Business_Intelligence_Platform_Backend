@@ -3,16 +3,10 @@ var dynamodb = new AWS.DynamoDB();
 const { Parser } = require("json2csv");
 const fs = require("fs");
 
-const vpc = "dev"; // "prod";
-
-// get all tables
 getAllTables(function (tables) {
-  // loop through all tables
   tables.forEach(async (tableName) => {
     let items = await getAllRecords(tableName);
-    // prepare the data for spreadsheet
     let csvData = prepareSpreadsheetData(items);
-    // save the data to csv
     const json2csvParser = new Parser();
     const csv = json2csvParser.parse(csvData);
     let filePath = `./dynamodb/backup_data/${tableName}.csv`;
