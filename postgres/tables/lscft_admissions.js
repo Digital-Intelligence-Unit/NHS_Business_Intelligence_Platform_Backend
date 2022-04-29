@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.lscft_admissions
+const createQuery = `-- Table: public.lscft_admissions
 
 -- DROP TABLE IF EXISTS public.lscft_admissions;
 

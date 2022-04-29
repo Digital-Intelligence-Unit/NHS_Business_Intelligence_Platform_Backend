@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.trusts
+const createQuery = `-- Table: public.trusts
 
 -- DROP TABLE IF EXISTS public.trusts;
 

@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.postcode_to_utla_names
+const createQuery = `-- Table: public.postcode_to_utla_names
 
 -- DROP TABLE IF EXISTS public.postcode_to_utla_names;
 

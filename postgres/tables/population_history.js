@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.population_history
+const createQuery = `-- Table: public.population_history
 
 -- DROP TABLE IF EXISTS public.population_history;
 

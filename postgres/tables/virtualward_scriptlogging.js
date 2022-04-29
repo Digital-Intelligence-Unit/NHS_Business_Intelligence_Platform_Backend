@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.virtualward_scriptlogging
+const createQuery = `-- Table: public.virtualward_scriptlogging
 
 -- DROP TABLE IF EXISTS public.virtualward_scriptlogging;
 

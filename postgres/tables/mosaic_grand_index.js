@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.mosaic_grand_index
+const createQuery = `-- Table: public.mosaic_grand_index
 
 -- DROP TABLE IF EXISTS public.mosaic_grand_index;
 

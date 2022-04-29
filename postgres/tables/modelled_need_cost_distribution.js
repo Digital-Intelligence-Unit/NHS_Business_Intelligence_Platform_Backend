@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.modelled_need_cost_distribution
+const createQuery = `-- Table: public.modelled_need_cost_distribution
 
 -- DROP TABLE IF EXISTS public.modelled_need_cost_distribution;
 

@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.notify_callbacks
+const createQuery = `-- Table: public.notify_callbacks
 
 -- DROP TABLE IF EXISTS public.notify_callbacks;
 

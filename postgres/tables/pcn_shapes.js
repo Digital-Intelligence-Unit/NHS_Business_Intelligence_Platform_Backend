@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.pcn_shapes
+const createQuery = `-- Table: public.pcn_shapes
 
 -- DROP TABLE IF EXISTS public.pcn_shapes;
 

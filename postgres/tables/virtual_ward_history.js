@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.virtual_ward_history
+const createQuery = `-- Table: public.virtual_ward_history
 
 -- DROP TABLE IF EXISTS public.virtual_ward_history;
 

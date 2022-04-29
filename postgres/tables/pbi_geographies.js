@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.pbi_geographies
+const createQuery = `-- Table: public.pbi_geographies
 
 -- DROP TABLE IF EXISTS public.pbi_geographies;
 

@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.mosaicpostcode
+const createQuery = `-- Table: public.mosaicpostcode
 
 -- DROP TABLE IF EXISTS public.mosaicpostcode;
 

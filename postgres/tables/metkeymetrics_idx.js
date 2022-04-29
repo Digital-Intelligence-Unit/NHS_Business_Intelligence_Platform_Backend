@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.performance_metrics
+const createQuery = `-- Table: public.performance_metrics
 
 -- DROP TABLE IF EXISTS public.performance_metrics;
 

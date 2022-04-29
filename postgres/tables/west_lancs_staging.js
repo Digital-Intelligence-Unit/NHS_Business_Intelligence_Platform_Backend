@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.west_lancs_staging
+const createQuery = `-- Table: public.west_lancs_staging
 
 -- DROP TABLE IF EXISTS public.west_lancs_staging;
 

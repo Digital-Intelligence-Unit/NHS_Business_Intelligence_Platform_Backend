@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.gps_backup
+const createQuery = `-- Table: public.gps_backup
 
 -- DROP TABLE IF EXISTS public.gps_backup;
 

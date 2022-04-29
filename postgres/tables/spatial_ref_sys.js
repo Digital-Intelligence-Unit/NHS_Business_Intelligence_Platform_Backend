@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.spatial_ref_sys
+const createQuery = `-- Table: public.spatial_ref_sys
 
 -- DROP TABLE IF EXISTS public.spatial_ref_sys;
 

@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.docobo_link_refs
+const createQuery = `-- Table: public.docobo_link_refs
 
 -- DROP TABLE IF EXISTS public.docobo_link_refs;
 
