@@ -30,11 +30,11 @@ This package has multiple scripts that can be run using the commands listed belo
 
 `npm run update-table-postgres` - This can be set up to update multiple tables at once, configuration can be found in the file `postgres/backupTableData.js`.
 
-TBC
+TBC...
 
 ## Testing
 
-TBC
+TBC...
 
 ## Terms of Use
 
