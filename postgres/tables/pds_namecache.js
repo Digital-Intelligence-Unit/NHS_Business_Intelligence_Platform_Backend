@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.pds_namecache
+const createQuery = `-- Table: public.pds_namecache
 
 -- DROP TABLE IF EXISTS public.pds_namecache;
 

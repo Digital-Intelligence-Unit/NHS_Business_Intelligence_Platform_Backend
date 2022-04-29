@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.nsss_history
+const createQuery = `-- Table: public.nsss_history
 
 -- DROP TABLE IF EXISTS public.nsss_history;
 

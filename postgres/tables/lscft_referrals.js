@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.lscft_referrals
+const createQuery = `-- Table: public.lscft_referrals
 
 -- DROP TABLE IF EXISTS public.lscft_referrals;
 

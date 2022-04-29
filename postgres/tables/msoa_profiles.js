@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.msoa_profiles
+const createQuery = `-- Table: public.msoa_profiles
 
 -- DROP TABLE IF EXISTS public.msoa_profiles;
 

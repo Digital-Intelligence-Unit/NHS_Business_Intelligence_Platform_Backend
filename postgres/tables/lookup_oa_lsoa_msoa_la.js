@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.lookup_oa_lsoa_msoa_la
+const createQuery = `-- Table: public.lookup_oa_lsoa_msoa_la
 
 -- DROP TABLE IF EXISTS public.lookup_oa_lsoa_msoa_la;
 

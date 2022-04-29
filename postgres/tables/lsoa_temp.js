@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.lsoa_temp
+const createQuery = `-- Table: public.lsoa_temp
 
 -- DROP TABLE IF EXISTS public.lsoa_temp;
 

@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.lsoa_shapes_backup
+const createQuery = `-- Table: public.lsoa_shapes_backup
 
 -- DROP TABLE IF EXISTS public.lsoa_shapes_backup;
 

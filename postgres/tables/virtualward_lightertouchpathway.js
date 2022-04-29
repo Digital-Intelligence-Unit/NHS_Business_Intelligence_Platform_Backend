@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.virtualward_lightertouchpathway
+const createQuery = `-- Table: public.virtualward_lightertouchpathway
 
 -- DROP TABLE IF EXISTS public.virtualward_lightertouchpathway;
 

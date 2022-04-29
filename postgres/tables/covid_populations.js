@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.covid_populations
+const createQuery = `-- Table: public.covid_populations
 
 -- DROP TABLE IF EXISTS public.covid_populations;
 

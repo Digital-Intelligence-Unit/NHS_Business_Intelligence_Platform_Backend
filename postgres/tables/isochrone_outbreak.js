@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.isochrone_outbreak
+const createQuery = `-- Table: public.isochrone_outbreak
 
 -- DROP TABLE IF EXISTS public.isochrone_outbreak;
 

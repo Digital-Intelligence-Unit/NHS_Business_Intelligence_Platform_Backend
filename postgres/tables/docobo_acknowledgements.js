@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.docobo_acknowledgements
+const createQuery = `-- Table: public.docobo_acknowledgements
 
 -- DROP TABLE IF EXISTS public.docobo_acknowledgements;
 

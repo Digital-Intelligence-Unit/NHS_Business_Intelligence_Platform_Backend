@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.docobo_patients
+const createQuery = `-- Table: public.docobo_patients
 
 -- DROP TABLE IF EXISTS public.docobo_patients;
 

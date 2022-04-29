@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.icps
+const createQuery = `-- Table: public.icps
 
 -- DROP TABLE IF EXISTS public.icps;
 

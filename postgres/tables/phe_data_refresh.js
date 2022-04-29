@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.phe_data_refresh
+const createQuery = `-- Table: public.phe_data_refresh
 
 -- DROP TABLE IF EXISTS public.phe_data_refresh;
 

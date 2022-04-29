@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.mosaichousehold
+const createQuery = `-- Table: public.mosaichousehold
 
 -- DROP TABLE IF EXISTS public.mosaichousehold;
 

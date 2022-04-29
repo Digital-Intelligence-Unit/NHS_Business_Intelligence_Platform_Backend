@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.covid19_negative_void
+const createQuery = `-- Table: public.covid19_negative_void
 
 -- DROP TABLE IF EXISTS public.covid19_negative_void;
 

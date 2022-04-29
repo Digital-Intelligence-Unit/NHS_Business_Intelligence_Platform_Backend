@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.mosaicpcn
+const createQuery = `-- Table: public.mosaicpcn
 
 -- DROP TABLE IF EXISTS public.mosaicpcn;
 

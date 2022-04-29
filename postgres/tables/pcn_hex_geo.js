@@ -1,4 +1,4 @@
-let createQuery = `-- Table: public.pcn_hex_geo
+const createQuery = `-- Table: public.pcn_hex_geo
 
 -- DROP TABLE IF EXISTS public.pcn_hex_geo;
 
