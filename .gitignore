@@ -4,5 +4,6 @@ node_modules
 postgres/generated_schema/*
 postgres/backup_data/*
 dynamodb/backup_data/*
+secrets/backup_data/*
 
 *.DS_Store

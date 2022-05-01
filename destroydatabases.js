@@ -2,7 +2,7 @@
 
 // TODO: process and methods for removing cloud data stores
 
-module.exports.destroydatabases = async () => {
+module.exports.destroydatabases = async (pgPool, AWS) => {
     console.log("Beginning to destroy databases...");
     try {
         // For Postgres:

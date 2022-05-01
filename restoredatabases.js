@@ -2,7 +2,7 @@
 
 // TODO: process and methods for restoring databases from local filesystem
 
-module.exports.restoredatabases = async () => {
+module.exports.restoredatabases = async (pgPool, AWS) => {
     console.log("Beginning to restore databases...");
     try {
         // For Postgres:

@@ -1,5 +1,7 @@
 // @ts-check
 
+const pg = require("pg");
+const AWS = (module.exports.AWS = require("aws-sdk"));
 const { destroydatabases } = require("./destroydatabases");
 const { offlinebackup } = require("./offlinebackup");
 const { restoredatabases } = require("./restoredatabases");
@@ -20,16 +22,34 @@ const { restoredatabases } = require("./restoredatabases");
         process.env.AWS_SECRETKEY = awsCredentials.secretkey;
         console.log("Retrieved cloud information.");
 
+        const types = pg.types;
+        const Pool = pg.Pool;
+        const pgPool = new Pool({
+            user: process.env.POSTGRES_UN,
+            host: process.env.PGDATABASE || "localhost",
+            database: "postgres",
+            password: process.env.POSTGRES_PW,
+            // @ts-ignore
+            port: process.env.PGPORT || "5433",
+        });
+        // @ts-ignore
+        types.setTypeParser(types.builtins.DATE, (stringValue) => {
+            return new Date(stringValue);
+        });
+
+        AWS.config.update({ region: process.env.AWSREGION || "eu-west-2" });
+        AWS.config.credentials = new AWS.SharedIniFileCredentials({ profile: process.env.AWSPROFILE || "default" });
+
         const action = process.env.PROCESSTOSTART || "undefined";
         switch (action) {
             case "offlinebackup":
-                offlinebackup();
+                offlinebackup(pgPool, AWS);
                 break;
             case "restoredatabases":
-                restoredatabases();
+                restoredatabases(pgPool, AWS);
                 break;
             case "destroydatabases":
-                destroydatabases();
+                destroydatabases(pgPool, AWS);
                 break;
             case "undefined":
             default:
