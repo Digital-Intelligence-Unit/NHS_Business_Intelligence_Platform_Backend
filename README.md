@@ -16,9 +16,9 @@ For recommended database deployments please review the code in: <https://github.
 
 This package has multiple scripts that can be run using the commands listed below.
 
-- `npm run offline-backup` - Creates a backup of the database and secrets locally. Please note that the postgresql backups will take some time to complete due to the size of the database.
-- `npm run create-databases` - Creates the databases required for the application.
-- `npm run remove-databases` - Removes the databases created for the application.
+- `npm run offlinebackup` - Creates a backup of the database and secrets locally. Please note that the postgresql backups will take some time to complete due to the size of the database.
+- `npm run createdatabases` - Creates the databases required for the application.
+- `npm run removedatabases` - Removes the databases created for the application.
 
 ## Terms of Use
 
