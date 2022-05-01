@@ -2,6 +2,12 @@
 
 const async = require("async");
 const {
+    getAllDynamoDBTables,
+    saveDynamoDBTableDescription,
+    selectAllFromDynamoDBTable,
+    writeDynamoDBTableDataToFile,
+} = require("./dynamodb/methods");
+const {
     getAllPGTables,
     selectAllFromTable,
     writeTableDataToFile,
@@ -45,7 +51,7 @@ module.exports.offlinebackup = async (pgPool, AWS) => {
                     (outerErr, outerResults) => {
                         if (outerErr) console.log(outerErr);
                         else {
-                            console.log(outerResults);
+                            console.log("Finished backing up Postgres tables.");
                         }
                     }
                 );
@@ -68,9 +74,44 @@ module.exports.offlinebackup = async (pgPool, AWS) => {
         });
 
         // For DynamoDB (AWS):
-        // 1. Scan for all tables in the database
-        // 2. For each table, retrieve data from the table and store in a csv file
-        // 3. Store the table schemas in a json file
+        getAllDynamoDBTables(AWS, (err, result) => {
+            if (err) console.log(err);
+            if (result && result.TableNames && result.TableNames.length) {
+                async.mapSeries(
+                    result.TableNames,
+                    (tableName, innerCallback) => {
+                        saveDynamoDBTableDescription(AWS, tableName, (saveError) => {
+                            if (saveError) {
+                                console.log(saveError);
+                            }
+                        });
+                        selectAllFromDynamoDBTable(AWS, tableName, (selectError, selectResult) => {
+                            if (selectError) {
+                                console.log(selectError);
+                                innerCallback(selectError, null);
+                            } else if (selectResult && selectResult.length) {
+                                writeDynamoDBTableDataToFile(tableName, selectResult, (writeError) => {
+                                    if (writeError) {
+                                        console.log(writeError);
+                                        innerCallback(writeError, null);
+                                    } else {
+                                        innerCallback(null, null);
+                                    }
+                                });
+                            } else {
+                                innerCallback(null, null);
+                            }
+                        });
+                    },
+                    (outerErr) => {
+                        if (outerErr) console.log(outerErr);
+                        else {
+                            console.log("DynamoDB tables backed up successfully!");
+                        }
+                    }
+                );
+            }
+        });
 
         // For AWS Secrets:
         getAllSecrets(AWS, (err, result) => {
