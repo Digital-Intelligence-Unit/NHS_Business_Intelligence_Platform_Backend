@@ -32,7 +32,7 @@ module.exports.selectAllFromTable = (pgPool, tableName, callback) => {
     });
 };
 
-module.exports.deleteTable = (pgPool, tableName, callback) => {
+module.exports.deletePGTable = (pgPool, tableName, callback) => {
     const query = `DROP TABLE IF EXISTS ${tableName};`;
     pgPool.query(query, callback);
 };

@@ -6,6 +6,11 @@ module.exports.getAllDynamoDBTables = function (AWS, callback) {
     dynamodb.listTables({}, callback);
 };
 
+module.exports.deleteDynamoDBTable = function (AWS, TableName, callback) {
+    const dynamodb = new AWS.DynamoDB();
+    dynamodb.deleteTable({ TableName }, callback);
+};
+
 module.exports.saveDynamoDBTableDescription = function (AWS, tablename, callback) {
     const dynamodb = new AWS.DynamoDB();
     dynamodb.describeTable({ TableName: tablename }, (err, result) => {

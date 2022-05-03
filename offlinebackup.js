@@ -7,6 +7,7 @@ const {
     selectAllFromDynamoDBTable,
     writeDynamoDBTableDataToFile,
 } = require("./dynamodb/methods");
+const { pgExcludeList } = require("./postgres/exclusions");
 const {
     getAllPGTables,
     selectAllFromTable,
@@ -15,9 +16,6 @@ const {
     writeSchemaDataToFile,
 } = require("./postgres/methods");
 const { getAllSecrets, writeSecretToFile } = require("./secrets/methods");
-
-// TABLES too big to backup, where the data is also available publicly or from other sources
-const pgExcludeList = ["clinical_trials", "clinically_vulnerable", "covid_populations"];
 
 module.exports.offlinebackup = async (pgPool, AWS) => {
     console.log("Beginning to backup databases...");
