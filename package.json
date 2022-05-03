@@ -1,24 +1,17 @@
 {
     "name": "nhs-business-intelligence-platform-backend",
-    "main": "server.js",
-    "version": "1.0.0",
+    "main": "app.js",
+    "version": "1.0.1",
     "scripts": {
-        "create-table": "node ./dynamodb/createTable.js",
-        "create-index": "node ./dynamodb/createIndex.js",
-        "delete-table": "node ./dynamodb/deleteTable.js",
-        "update-table": "node ./dynamodb/updateTable.js",
-        "backup-all-tables": "node ./dynamodb/backupAllTables.js",
-        "create-table-postgres": "node ./postgres/createTable.js",
-        "delete-table-postgres": "node ./postgres/deleteTable.js",
-        "backup-table-postgres": "node ./postgres/backupTableData.js",
-        "update-table-postgres": "node ./postgres/updateTableData.js",
-        "backup-all-tables-postgres": "node ./postgres/backupAllTables.js",
-        "update-all-tables-postgres": "node ./postgres/updateAllTablesData.js"
+        "offlinebackup": "cross-env PROCESSTOSTART=offlinebackup node ./app",
+        "restoredatabases": "cross-env PROCESSTOSTART=restoredatabases node ./app",
+        "destroydatabases": "cross-env PROCESSTOSTART=destroydatabases node ./app"
     },
     "dependencies": {
         "aws-sdk": "^2.840.0",
+        "cross-env": "^7.0.3",
         "csv-parser": "^3.0.0",
-        "diu-data-functions": "^1.1.1",
+        "diu-data-functions": "^1.2.6",
         "express": "~4.16.1",
         "faker": "^4.1.0",
         "json2csv": "^5.0.7",
@@ -26,7 +19,7 @@
     },
     "devDependencies": {
         "@types/node": "^17.0.18",
-        "dotenv": "^8.2.0",
+        "dotenv": "^8.6.0",
         "eslint": "^8.14.0",
         "eslint-config-standard": "^17.0.0",
         "eslint-plugin-import": "^2.26.0",

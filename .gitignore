@@ -1,10 +1,10 @@
 # Dependency directories
 node_modules
 
-postgres/backup_data/*.csv
-
-postgres/generated_schema/*.json
-
-dynamodb/backup_data/*.csv
+postgres/generated_schema/*
+postgres/backup_data/*
+dynamodb/backup_data/*
+dynamodb/backup_schemas/*
+secrets/backup_data/*
 
 *.DS_Store

@@ -16,25 +16,9 @@ For recommended database deployments please review the code in: <https://github.
 
 This package has multiple scripts that can be run using the commands listed below.
 
-`npm run create-table` - This will create a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/createTable.js`.
-
-`npm run create-index` - This will create an index for a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/createIndex.js`.
-
-`npm run delete-table` - This will delete a dynamoDB table matching the parameters of a prepared file. This will run the script located at `/dynamodb/deleteTable.js`.
-
-`npm run create-table-postgres` - This will create a postgres table reading from a create script located in `/postgres/tables/`.
-
-`npm run delete-table-postgres` - This will delete a postgres table based on the settings in `/postgres/deleteTable.js`.
-
-`npm run backup-table-postgres` - This can be set up to backup multiple tables at once, configuration can be found in the file `postgres/backupTableData.js`.
-
-`npm run update-table-postgres` - This can be set up to update multiple tables at once, configuration can be found in the file `postgres/backupTableData.js`.
-
-TBC...
-
-## Testing
-
-TBC...
+- `npm run offlinebackup` - Creates a backup of the database and secrets locally. Please note that the postgresql backups will take some time to complete due to the size of the database.
+- `npm run createdatabases` - Creates the databases required for the application.
+- `npm run removedatabases` - Removes the databases created for the application.
 
 ## Terms of Use
 
