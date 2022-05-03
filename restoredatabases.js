@@ -46,26 +46,20 @@ module.exports.restoredatabases = async (pgPool, AWS) => {
         });
 
         // For DynamoDB:
-        getAllDynamoDBTableDescriptionsAndCreateTables(AWS, (err, result) => {
+        getAllDynamoDBTableDescriptionsAndCreateTables(AWS, (err, schemas) => {
             if (err) console.log(err);
-            else if (result && result.length) {
+            else if (schemas && schemas.length) {
                 async.mapSeries(
-                    result,
-                    (schemas, innerCallback) => {
-                        if (schemas && schemas.length) {
-                            schemas.forEach((schema) => {
-                                restoreDataInDatabaseForTableFromSchema(AWS, schema, (restoreError) => {
-                                    if (restoreError) {
-                                        console.log(restoreError);
-                                        innerCallback(restoreError, null);
-                                    } else {
-                                        innerCallback(null, null);
-                                    }
-                                });
-                            });
-                        } else {
-                            innerCallback(null, null);
-                        }
+                    schemas,
+                    (schema, innerCallback) => {
+                        restoreDataInDatabaseForTableFromSchema(AWS, schema, (restoreError) => {
+                            if (restoreError) {
+                                console.log(restoreError);
+                                innerCallback(restoreError, null);
+                            } else {
+                                innerCallback(null, null);
+                            }
+                        });
                     },
                     (outerErr, outerResults) => {
                         if (outerErr) console.log(outerErr);
