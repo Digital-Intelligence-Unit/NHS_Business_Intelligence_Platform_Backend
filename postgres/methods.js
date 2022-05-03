@@ -1,6 +1,7 @@
 // @ts-check
 const { Parser } = require("json2csv");
 const fs = require("fs");
+const { pgExcludeList } = require("./exclusions");
 
 module.exports.getAllPGTables = function (pgPool, callback) {
     const query = "SELECT table_name FROM information_schema.tables WHERE table_schema = 'public' AND table_type = 'BASE TABLE';";
@@ -37,6 +38,22 @@ module.exports.deletePGTable = (pgPool, tableName, callback) => {
     pgPool.query(query, callback);
 };
 
+module.exports.restorePGTable = (pgPool, createQuery, callback) => {
+    const tableName = extractTableNameFromSchema(createQuery);
+    if (pgExcludeList.includes(tableName)) {
+        callback(null, null);
+    } else {
+        pgPool.query(createQuery, (err, result) => {
+            if (err) {
+                console.log(err);
+                callback(err, null);
+            } else {
+                writeCSVDataToDatabase(pgPool, tableName, callback);
+            }
+        });
+    }
+};
+
 module.exports.writeTableDataToFile = (tableName, data, callback) => {
     const json2csvParser = new Parser();
     const csv = json2csvParser.parse(data);
@@ -44,11 +61,46 @@ module.exports.writeTableDataToFile = (tableName, data, callback) => {
     fs.writeFile(filePath, csv, callback);
 };
 
+const writeCSVDataToDatabase = (pgPool, tableName, callback) => {
+    const filePath = `./postgres/backup_data/${tableName}.csv`;
+    fs.readFile(filePath, "utf8", (err, csvData) => {
+        if (err) {
+            console.log(err);
+            callback(err, null);
+        } else {
+            const query = `COPY ${tableName} FROM STDIN WITH CSV HEADER;`;
+            pgPool.query(query, csvData, (errQuery, result) => {
+                if (err) {
+                    console.log(errQuery);
+                    callback(errQuery, null);
+                } else {
+                    callback(null, true);
+                }
+            });
+        }
+    });
+};
+
+const extractTableNameFromSchema = (schema) => {
+    return schema.split("public.")[1].split(" ")[0];
+};
+
 module.exports.writeSchemaDataToFile = (filename, data, callback) => {
     const jsonObj = { schemas: data };
     const strObj = JSON.stringify(jsonObj).split("\\n").join(" ");
     const filePath = `./postgres/backup_data/${filename}.json`;
     fs.writeFile(filePath, strObj, "utf8", callback);
+};
+
+module.exports.checkSchemaDataFileExists = (filename, callback) => {
+    const filePath = `./postgres/backup_data/${filename}.json`;
+    fs.readFile(filePath, "utf-8", function (errFiles, content) {
+        if (errFiles) {
+            callback(null, false);
+            return;
+        }
+        callback(null, content);
+    });
 };
 
 module.exports.generateCreateTableSchemas = (pgPool, callback) => {
