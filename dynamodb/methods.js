@@ -80,7 +80,7 @@ module.exports.getAllDynamoDBTableDescriptionsAndCreateTables = (AWS, callback) 
 };
 
 module.exports.restoreDataInDatabaseForTableFromSchema = (AWS, schema, callback) => {
-    const dynamodb = new AWS.DynamoDB().DocumentClient();
+    const dynamodb = new AWS.DynamoDB.DocumentClient();
     updateDynamoDBRecords(schema, dynamodb, callback);
 };
 

@@ -5,7 +5,9 @@
     "scripts": {
         "offlinebackup": "cross-env PROCESSTOSTART=offlinebackup node ./app",
         "restoredatabases": "cross-env PROCESSTOSTART=restoredatabases node ./app",
-        "destroydatabases": "cross-env PROCESSTOSTART=destroydatabases node ./app"
+        "destroydatabases": "cross-env PROCESSTOSTART=destroydatabases node ./app",
+        "migrationofid": "node ./dynamodb/migrationfrom_idtoid",
+        "repairfromnew": "node ./dynamodb/repairfrom_new"
     },
     "dependencies": {
         "aws-sdk": "^2.840.0",
